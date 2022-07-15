@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		C78B9008288141040040F855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9007288141040040F855 /* AppDelegate.swift */; };
 		C78B900A288141040040F855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9009288141040040F855 /* SceneDelegate.swift */; };
-		C78B900C288141040040F855 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B900B288141040040F855 /* ViewController.swift */; };
 		C78B900F288141040040F855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C78B900D288141040040F855 /* Main.storyboard */; };
 		C78B9011288141070040F855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78B9010288141070040F855 /* Assets.xcassets */; };
 		C78B9014288141070040F855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C78B9012288141070040F855 /* LaunchScreen.storyboard */; };
+		C78B9021288143210040F855 /* russia_losses_equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = C78B9020288143210040F855 /* russia_losses_equipment.json */; };
+		C78B90232881432A0040F855 /* russia_losses_personnel.json in Resources */ = {isa = PBXBuildFile; fileRef = C78B90222881432A0040F855 /* russia_losses_personnel.json */; };
+		C78B9026288143510040F855 /* EquipmentLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9025288143510040F855 /* EquipmentLosses.swift */; };
+		C78B9028288143670040F855 /* PersonnelLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9027288143670040F855 /* PersonnelLosses.swift */; };
+		C78B902A2881437A0040F855 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B90292881437A0040F855 /* DataLoader.swift */; };
+		C78B902C2881455F0040F855 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B902B2881455F0040F855 /* MainCollectionViewController.swift */; };
+		C78B902E288145C00040F855 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B902D288145C00040F855 /* CollectionViewCell.swift */; };
+		C78B9031288146810040F855 /* Extension + MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C78B9004288141040040F855 /* EnemyLosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnemyLosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78B9007288141040040F855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C78B9009288141040040F855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C78B900B288141040040F855 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C78B900E288141040040F855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C78B9010288141070040F855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C78B9013288141070040F855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C78B9015288141070040F855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C78B9020288143210040F855 /* russia_losses_equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_equipment.json; sourceTree = "<group>"; };
+		C78B90222881432A0040F855 /* russia_losses_personnel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_personnel.json; sourceTree = "<group>"; };
+		C78B9025288143510040F855 /* EquipmentLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLosses.swift; sourceTree = "<group>"; };
+		C78B9027288143670040F855 /* PersonnelLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelLosses.swift; sourceTree = "<group>"; };
+		C78B90292881437A0040F855 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		C78B902B2881455F0040F855 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		C78B902D288145C00040F855 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + MainCollectionViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,78 @@
 		C78B9006288141040040F855 /* EnemyLosses */ = {
 			isa = PBXGroup;
 			children = (
-				C78B9007288141040040F855 /* AppDelegate.swift */,
-				C78B9009288141040040F855 /* SceneDelegate.swift */,
-				C78B900B288141040040F855 /* ViewController.swift */,
-				C78B900D288141040040F855 /* Main.storyboard */,
-				C78B9010288141070040F855 /* Assets.xcassets */,
-				C78B9012288141070040F855 /* LaunchScreen.storyboard */,
-				C78B9015288141070040F855 /* Info.plist */,
+				C78B902F2881465F0040F855 /* Extensions */,
+				C78B9024288143380040F855 /* Models */,
+				C78B901B288142A60040F855 /* Views */,
+				C78B901C288142B80040F855 /* Controllers */,
+				C78B901D288142D40040F855 /* Supporting Files */,
+				C78B901E288142FF0040F855 /* Resources */,
 			);
 			path = EnemyLosses;
+			sourceTree = "<group>";
+		};
+		C78B901B288142A60040F855 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C78B900D288141040040F855 /* Main.storyboard */,
+				C78B9012288141070040F855 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C78B901C288142B80040F855 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C78B902B2881455F0040F855 /* MainCollectionViewController.swift */,
+				C78B902D288145C00040F855 /* CollectionViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C78B901D288142D40040F855 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C78B9007288141040040F855 /* AppDelegate.swift */,
+				C78B9009288141040040F855 /* SceneDelegate.swift */,
+				C78B9015288141070040F855 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C78B901E288142FF0040F855 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C78B901F2881430F0040F855 /* JSON Files */,
+				C78B9010288141070040F855 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C78B901F2881430F0040F855 /* JSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				C78B9020288143210040F855 /* russia_losses_equipment.json */,
+				C78B90222881432A0040F855 /* russia_losses_personnel.json */,
+			);
+			path = "JSON Files";
+			sourceTree = "<group>";
+		};
+		C78B9024288143380040F855 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C78B9025288143510040F855 /* EquipmentLosses.swift */,
+				C78B9027288143670040F855 /* PersonnelLosses.swift */,
+				C78B90292881437A0040F855 /* DataLoader.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C78B902F2881465F0040F855 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +204,8 @@
 			files = (
 				C78B9014288141070040F855 /* LaunchScreen.storyboard in Resources */,
 				C78B9011288141070040F855 /* Assets.xcassets in Resources */,
+				C78B9021288143210040F855 /* russia_losses_equipment.json in Resources */,
+				C78B90232881432A0040F855 /* russia_losses_personnel.json in Resources */,
 				C78B900F288141040040F855 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C78B900C288141040040F855 /* ViewController.swift in Sources */,
+				C78B9028288143670040F855 /* PersonnelLosses.swift in Sources */,
+				C78B9031288146810040F855 /* Extension + MainCollectionViewController.swift in Sources */,
+				C78B902A2881437A0040F855 /* DataLoader.swift in Sources */,
+				C78B9026288143510040F855 /* EquipmentLosses.swift in Sources */,
+				C78B902E288145C00040F855 /* CollectionViewCell.swift in Sources */,
 				C78B9008288141040040F855 /* AppDelegate.swift in Sources */,
 				C78B900A288141040040F855 /* SceneDelegate.swift in Sources */,
+				C78B902C2881455F0040F855 /* MainCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EnemyLosses/Info.plist;
+				INFOPLIST_FILE = "EnemyLosses/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -305,7 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EnemyLosses/Info.plist;
+				INFOPLIST_FILE = "EnemyLosses/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,7 +416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
