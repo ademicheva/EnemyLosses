@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C76B9669288589CA00111F68 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B9668288589CA00111F68 /* MainViewController.swift */; };
+		C76B966B2885A65100111F68 /* LossesByDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B966A2885A65100111F68 /* LossesByDayViewController.swift */; };
+		C76B966D2885A83900111F68 /* LossesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B966C2885A83900111F68 /* LossesTVCell.swift */; };
 		C78B9008288141040040F855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9007288141040040F855 /* AppDelegate.swift */; };
 		C78B900A288141040040F855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9009288141040040F855 /* SceneDelegate.swift */; };
 		C78B900F288141040040F855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C78B900D288141040040F855 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C76B9668288589CA00111F68 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C76B966A2885A65100111F68 /* LossesByDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesByDayViewController.swift; sourceTree = "<group>"; };
+		C76B966C2885A83900111F68 /* LossesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesTVCell.swift; sourceTree = "<group>"; };
 		C78B9004288141040040F855 /* EnemyLosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnemyLosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78B9007288141040040F855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C78B9009288141040040F855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,8 @@
 		C78B9006288141040040F855 /* EnemyLosses */ = {
 			isa = PBXGroup;
 			children = (
+				C78B902B2881455F0040F855 /* MainCollectionViewController.swift */,
+				C78B902D288145C00040F855 /* CollectionViewCell.swift */,
 				C78B902F2881465F0040F855 /* Extensions */,
 				C78B9024288143380040F855 /* Models */,
 				C78B901B288142A60040F855 /* Views */,
@@ -92,8 +100,9 @@
 		C78B901C288142B80040F855 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C78B902B2881455F0040F855 /* MainCollectionViewController.swift */,
-				C78B902D288145C00040F855 /* CollectionViewCell.swift */,
+				C76B9668288589CA00111F68 /* MainViewController.swift */,
+				C76B966A2885A65100111F68 /* LossesByDayViewController.swift */,
+				C76B966C2885A83900111F68 /* LossesTVCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,9 +231,12 @@
 				C78B902A2881437A0040F855 /* DataLoader.swift in Sources */,
 				C78B9026288143510040F855 /* EquipmentLosses.swift in Sources */,
 				C78B902E288145C00040F855 /* CollectionViewCell.swift in Sources */,
+				C76B966D2885A83900111F68 /* LossesTVCell.swift in Sources */,
 				C78B9008288141040040F855 /* AppDelegate.swift in Sources */,
+				C76B9669288589CA00111F68 /* MainViewController.swift in Sources */,
 				C78B900A288141040040F855 /* SceneDelegate.swift in Sources */,
 				C78B902C2881455F0040F855 /* MainCollectionViewController.swift in Sources */,
+				C76B966B2885A65100111F68 /* LossesByDayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
