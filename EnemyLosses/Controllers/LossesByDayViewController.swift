@@ -21,20 +21,28 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     
-    let data = DataLoader().equipmentLosses
-    let arrayOfValues = EquipmentLosses.EquipmentLossesArray
-    var currentArray: [String] = []
+    let dataEquipment = DataLoader(lossesValue: LossesValue.equipment).equipmentLosses
+    let dataPersonnel = DataLoaderPersonnel().personnelLosses
+    let arrayOfValuesEquipment = EquipmentLosses.EquipmentLossesArray
+    let arrayOfValuesPersonnel = PersonnelLosses.PersonnelLossesArray
+    var currentArrayEquipment: [String] = []
+    var currentArrayPersonnel: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.layer.cornerRadius = 10
+        tableView.showsVerticalScrollIndicator = false
+
         
-        print("Data count is \(testArray.count)")
-        currentArray = createValues(item: data[dayCount - 2])
+        currentArrayEquipment = createValues(item: dataEquipment[dayCount - 2])
+        currentArrayPersonnel = createValuesPersonnel(item: dataPersonnel[dayCount - 2])
+        print("Data personnel count \(dataPersonnel.count)")
+        print("Data equipment count \(dataEquipment.count)")
         label.text = String(dayCount)
-//        label.text = String(data.last!.day)
         tableView.reloadData()
     }
     
@@ -53,15 +61,26 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         return equipmentArray.map({ return $0 == "0" ? "No info" : $0 })
     }
     
+    func createValuesPersonnel(item: PersonnelLosses) -> [String] {
+        var equipmentArray: [String] = []
+        let mirror = Mirror(reflecting: item)
+        
+        for i in mirror.children {
+            equipmentArray.append(toString(i.value))
+        }
+        return equipmentArray.map({ return $0 == "0" ? "No info" : $0 })
+    }
+    
     func toString(_ value: Any?) -> String {
         return String(describing: value ?? "")
     }
+    
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          switch segmentedControl.selectedSegmentIndex {
          case 0:
-             return arrayOfValues.count
+             return arrayOfValuesEquipment.count
          case 1:
-             return testArray.count
+             return arrayOfValuesPersonnel.count
          default:
              break
          }
@@ -70,20 +89,26 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LossesTVCell
-        
+        cell.backgroundView = nil
+      //  cell.backgroundColor = .clear
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            cell.nameLabel.text = arrayOfValues[indexPath.row]
-            cell.valueLabel.text = currentArray[indexPath.row]
+            cell.nameLabel.text = arrayOfValuesEquipment[indexPath.row]
+            cell.valueLabel.text = currentArrayEquipment[indexPath.row]
         case 1:
-            cell.nameLabel.text = testArray[indexPath.row]
-            cell.valueLabel.text = testArray[indexPath.row]
+            cell.nameLabel.text = arrayOfValuesPersonnel[indexPath.row]
+            cell.valueLabel.text = currentArrayPersonnel[indexPath.row]
         default:
             break
         }
 
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 40
+//    }
+    
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         tableView.reloadData()
@@ -104,8 +129,8 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
                 else {
                     self.label.text = newTaskTitle
                     self.dayCount = Int(newTaskTitle)!
-                    self.currentArray = self.createValues(item: self.data[self.dayCount - 2])
-//                    self.
+                    self.currentArrayEquipment = self.createValues(item: self.dataEquipment[self.dayCount - 2])
+                    self.currentArrayPersonnel = self.createValuesPersonnel(item: self.dataPersonnel[self.dayCount - 2])
                     self.tableView.reloadData()
                 }
             }

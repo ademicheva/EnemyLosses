@@ -7,31 +7,28 @@
 
 import Foundation
 
-enum LossesValue: String {
-    case equipment = "russia_losses_equipment"
-    case personnel = "russia_losses_personnel"
-}
+//enum LossesValue: String {
+//    case equipment = "russia_losses_equipment"
+//    case personnel = "russia_losses_personnel"
+//}
 
-public class DataLoader {
-    var equipmentLosses = [EquipmentLosses]()
+public class DataLoaderPersonnel {
     var personnelLosses = [PersonnelLosses]()
     
-    init(lossesValue: LossesValue) {
-        load(lossesValue: lossesValue)
+    init() {
+        load()
     }
     
-    func load(lossesValue: LossesValue) {
+    func load() {
         
-        let path = Bundle.main.url(forResource: lossesValue.rawValue, withExtension: "json")!
+        let path = Bundle.main.url(forResource: "russia_losses_personnel", withExtension: "json")!
         
         do {
             let urltoString = try String(contentsOf: path)
             let correctJSONString = urltoString.replacingOccurrences(of: "NaN", with: "null")
             guard let jsonData = correctJSONString.data(using: .utf8) else { return  }
             let jsonDecoder = JSONDecoder()
-            let dataFromJSON = try jsonDecoder.decode([EquipmentLosses].self, from: jsonData)
             let dataPersonnelFromJSON = try jsonDecoder.decode([PersonnelLosses].self, from: jsonData)
-            self.equipmentLosses = dataFromJSON
             self.personnelLosses = dataPersonnelFromJSON
         } catch {
             print(error)

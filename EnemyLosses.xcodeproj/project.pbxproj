@@ -23,6 +23,7 @@
 		C78B902C2881455F0040F855 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B902B2881455F0040F855 /* MainCollectionViewController.swift */; };
 		C78B902E288145C00040F855 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B902D288145C00040F855 /* CollectionViewCell.swift */; };
 		C78B9031288146810040F855 /* Extension + MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */; };
+		C79BDFFE2886C95C00F7C001 /* DataLoaderPersonnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C78B902B2881455F0040F855 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		C78B902D288145C00040F855 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + MainCollectionViewController.swift"; sourceTree = "<group>"; };
+		C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderPersonnel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				C78B9025288143510040F855 /* EquipmentLosses.swift */,
 				C78B9027288143670040F855 /* PersonnelLosses.swift */,
+				C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */,
 				C78B90292881437A0040F855 /* DataLoader.swift */,
 			);
 			path = Models;
@@ -234,6 +237,7 @@
 				C76B966D2885A83900111F68 /* LossesTVCell.swift in Sources */,
 				C78B9008288141040040F855 /* AppDelegate.swift in Sources */,
 				C76B9669288589CA00111F68 /* MainViewController.swift in Sources */,
+				C79BDFFE2886C95C00F7C001 /* DataLoaderPersonnel.swift in Sources */,
 				C78B900A288141040040F855 /* SceneDelegate.swift in Sources */,
 				C78B902C2881455F0040F855 /* MainCollectionViewController.swift in Sources */,
 				C76B966B2885A65100111F68 /* LossesByDayViewController.swift in Sources */,

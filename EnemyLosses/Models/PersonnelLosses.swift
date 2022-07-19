@@ -8,6 +8,9 @@
 import Foundation
 
 struct PersonnelLosses: Codable {
+    static let PersonnelLossesArray = ["Date", "Day", "Personnel", "Prisoner of War"]
+
+    
     var date: String
     var day: Int
     var personnel: Int
@@ -20,3 +23,23 @@ struct PersonnelLosses: Codable {
         case pow = "POW"
     }
 }
+
+extension PersonnelLosses {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        date = try values.decodeIfPresent(String.self, forKey: .date) ?? ""
+        
+        if let theDay = try? values.decode(String.self, forKey: .day),
+            let dayValue = Int(theDay) {
+            day = dayValue
+        } else {
+            day = try values.decode(Int.self, forKey: .day)
+        }
+
+        personnel = try values.decodeIfPresent(Int.self, forKey: .personnel)  ?? 0
+        pow = try values.decodeIfPresent(Int.self, forKey: .pow)  ?? 0
+        
+    }
+}
+

@@ -6,10 +6,10 @@
 //
 
 import UIKit
-
+/*
 
 class MainCollectionViewController: UICollectionViewController {
-    let data = DataLoader().equipmentLosses
+  //  let data = DataLoader().equipmentLosses
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,3 +82,4 @@ class MainCollectionViewController: UICollectionViewController {
     */
 
 }
+*/

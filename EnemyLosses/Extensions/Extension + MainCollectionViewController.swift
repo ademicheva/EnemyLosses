@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+/*
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfColumns: CGFloat = 2
@@ -26,3 +26,4 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
         return 20
     }
 }
+*/
