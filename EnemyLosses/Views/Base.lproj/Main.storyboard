@@ -174,28 +174,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo2_new" translatesAutoresizingMaskIntoConstraints="NO" id="qhf-N8-WnX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo2_new" translatesAutoresizingMaskIntoConstraints="NO" id="qhf-N8-WnX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app_icon-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-tI-Oly">
-                                <rect key="frame" x="16" y="144" width="343" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-tI-Oly">
+                                <rect key="frame" x="16" y="114" width="343" height="344"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="344" id="HkA-AO-XCn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="343" id="SUc-5V-RkN"/>
+                                </constraints>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-EV-1bV">
-                                <rect key="frame" x="16" y="538" width="343" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-EV-1bV">
+                                <rect key="frame" x="16" y="668" width="343" height="10"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enemy Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-ds-utv">
-                                <rect key="frame" x="16" y="591" width="343" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enemy Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-ds-utv">
+                                <rect key="frame" x="16" y="528" width="343" height="100"/>
                                 <color key="tintColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="NpZ-md-cP3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="49"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y1w-nf-nW5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="y1w-nf-nW5" firstAttribute="trailing" secondItem="uBU-tI-Oly" secondAttribute="trailing" constant="16" id="5a2-lI-Q0v"/>
+                            <constraint firstItem="uBU-tI-Oly" firstAttribute="leading" secondItem="y1w-nf-nW5" secondAttribute="leading" constant="16" id="6Sj-P1-eUD"/>
+                            <constraint firstItem="Sop-ds-utv" firstAttribute="leading" secondItem="y1w-nf-nW5" secondAttribute="leading" constant="16" id="7T6-7X-BrK"/>
+                            <constraint firstItem="y1w-nf-nW5" firstAttribute="trailing" secondItem="1Dh-EV-1bV" secondAttribute="trailing" constant="16" id="CiO-sd-E7u"/>
+                            <constraint firstItem="y1w-nf-nW5" firstAttribute="trailing" secondItem="Sop-ds-utv" secondAttribute="trailing" constant="16" id="IME-Gp-u7k"/>
+                            <constraint firstItem="y1w-nf-nW5" firstAttribute="trailing" secondItem="uBU-tI-Oly" secondAttribute="trailing" constant="16" id="IjZ-ME-TtY"/>
+                            <constraint firstItem="1Dh-EV-1bV" firstAttribute="top" secondItem="Sop-ds-utv" secondAttribute="bottom" constant="40" id="JfS-kA-5rL"/>
+                            <constraint firstItem="y1w-nf-nW5" firstAttribute="bottom" secondItem="1Dh-EV-1bV" secondAttribute="bottom" constant="100" id="LAN-BC-oHm"/>
+                            <constraint firstItem="y1w-nf-nW5" firstAttribute="trailing" secondItem="Sop-ds-utv" secondAttribute="trailing" constant="16" id="PIq-a4-6lB"/>
+                            <constraint firstItem="uBU-tI-Oly" firstAttribute="top" secondItem="y1w-nf-nW5" secondAttribute="top" constant="70" id="RUg-Ru-fGc"/>
+                            <constraint firstItem="Sop-ds-utv" firstAttribute="top" secondItem="uBU-tI-Oly" secondAttribute="bottom" constant="70" id="RlC-wr-bhc"/>
+                            <constraint firstItem="Sop-ds-utv" firstAttribute="leading" secondItem="y1w-nf-nW5" secondAttribute="leading" constant="16" id="SQi-Rp-kZ1"/>
+                            <constraint firstItem="uBU-tI-Oly" firstAttribute="leading" secondItem="y1w-nf-nW5" secondAttribute="leading" constant="16" id="Z00-x3-TZb"/>
+                            <constraint firstItem="Sop-ds-utv" firstAttribute="top" secondItem="uBU-tI-Oly" secondAttribute="bottom" constant="70" id="cWW-pu-x7H"/>
+                            <constraint firstItem="uBU-tI-Oly" firstAttribute="top" secondItem="y1w-nf-nW5" secondAttribute="top" constant="70" id="cik-rR-W6l"/>
+                            <constraint firstItem="1Dh-EV-1bV" firstAttribute="leading" secondItem="y1w-nf-nW5" secondAttribute="leading" constant="16" id="hOk-mM-M33"/>
+                            <constraint firstItem="1Dh-EV-1bV" firstAttribute="top" secondItem="Sop-ds-utv" secondAttribute="bottom" constant="40" id="jfH-l7-ncw"/>
+                            <constraint firstItem="1Dh-EV-1bV" firstAttribute="leading" secondItem="y1w-nf-nW5" secondAttribute="leading" constant="16" id="omE-zW-hf0"/>
+                            <constraint firstItem="y1w-nf-nW5" firstAttribute="trailing" secondItem="1Dh-EV-1bV" secondAttribute="trailing" constant="16" id="qmp-NY-XBk"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="progressVIew" destination="1Dh-EV-1bV" id="v26-TD-Y9K"/>

@@ -16,28 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo2_new" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-1P-h20">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo2_new" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-1P-h20">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enemy Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNk-qZ-TLi">
-                                <rect key="frame" x="16" y="597" width="343" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="jcd-uF-jWA">
+                                <rect key="frame" x="16" y="121" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="NLQ-Ld-iz1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enemy Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNk-qZ-TLi">
+                                <rect key="frame" x="16" y="534" width="343" height="100"/>
                                 <color key="tintColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="rLT-ZS-VXm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="49"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app_icon-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="jcd-uF-jWA">
-                                <rect key="frame" x="16" y="167" width="343" height="341"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YwG-1P-h20" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="9AV-cO-cDb"/>
-                            <constraint firstAttribute="bottom" secondItem="YwG-1P-h20" secondAttribute="bottom" id="Wjh-IE-pGL"/>
-                            <constraint firstItem="YwG-1P-h20" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WqW-Ac-jaW"/>
-                            <constraint firstItem="YwG-1P-h20" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gkN-gW-sJP"/>
+                            <constraint firstItem="jcd-uF-jWA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7CD-Mx-8pg"/>
+                            <constraint firstItem="jcd-uF-jWA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="77" id="B8w-62-4SF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nNk-qZ-TLi" secondAttribute="trailing" constant="16" id="Pub-dj-ikn"/>
+                            <constraint firstItem="nNk-qZ-TLi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SWt-sy-bJE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jcd-uF-jWA" secondAttribute="trailing" constant="16" id="clt-0u-qoz"/>
+                            <constraint firstItem="nNk-qZ-TLi" firstAttribute="top" secondItem="jcd-uF-jWA" secondAttribute="bottom" constant="70" id="p3S-7D-B0N"/>
                         </constraints>
                     </view>
                 </viewController>
