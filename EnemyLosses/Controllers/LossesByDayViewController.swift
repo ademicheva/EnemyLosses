@@ -12,51 +12,83 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     let testArray = ["one", "two", "three", "four"]
 
     
+    var dayCount = 140 // number of day - 3 (140 - 138)
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    
+    
+    let data = DataLoader().equipmentLosses
+    let arrayOfValues = EquipmentLosses.EquipmentLossesArray
+    var currentArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-
-        // Do any additional setup after loading the view.
+        
+        print("Data count is \(testArray.count)")
+        currentArray = createValues(item: data[dayCount - 2])
+        label.text = String(dayCount)
+//        label.text = String(data.last!.day)
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
+    func createValues(item: EquipmentLosses) -> [String] {
+        var equipmentArray: [String] = []
+        let mirror = Mirror(reflecting: item)
+        
+        for i in mirror.children {
+            equipmentArray.append(toString(i.value))
+        }
+        return equipmentArray.map({ return $0 == "0" ? "No info" : $0 })
+    }
+    
+    func toString(_ value: Any?) -> String {
+        return String(describing: value ?? "")
     }
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-         return testArray.count
+         switch segmentedControl.selectedSegmentIndex {
+         case 0:
+             return arrayOfValues.count
+         case 1:
+             return testArray.count
+         default:
+             break
+         }
+         return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LossesTVCell
-        cell.nameLabel.text = testArray[indexPath.row]
-        cell.valueLabel.text =  testArray[indexPath.row]
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            cell.nameLabel.text = arrayOfValues[indexPath.row]
+            cell.valueLabel.text = currentArray[indexPath.row]
+        case 1:
+            cell.nameLabel.text = testArray[indexPath.row]
+            cell.valueLabel.text = testArray[indexPath.row]
+        default:
+            break
+        }
+
         return cell
     }
     
-    /*
-     let alertController = UIAlertController(title: "New Task", message: "Please add new task", preferredStyle: .alert)
-     let saveAction = UIAlertAction(title: "Save", style: .default) { action in
-         let tf = alertController.textFields?.first
-         if let newTaskTitle = tf?.text {
-           //  self.tasks.insert(newTask, at: 0)
-             self.saveTask(withTitle: newTaskTitle)
-             self.tableView.reloadData()
-         }
-     }
-
-     alertController.addTextField { _ in }
-     let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
-     
-     alertController.addAction(saveAction)
-     alertController.addAction(cancelAction)
-     present(alertController, animated: true, completion: nil)
-     */
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        tableView.reloadData()
+    }
     
-
     @IBAction func okButtonPressed(_ sender: UIButton) {
         let ac = UIAlertController(title: "Enter the day", message: "", preferredStyle: .alert)
         
@@ -71,6 +103,9 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 else {
                     self.label.text = newTaskTitle
+                    self.dayCount = Int(newTaskTitle)!
+                    self.currentArray = self.createValues(item: self.data[self.dayCount - 2])
+//                    self.
                     self.tableView.reloadData()
                 }
             }
@@ -81,8 +116,9 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         ac.addAction(saveAction)
         ac.addAction(cancelAction)
         
-        present(ac, animated: true, completion: nil)
         
+        
+        present(ac, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

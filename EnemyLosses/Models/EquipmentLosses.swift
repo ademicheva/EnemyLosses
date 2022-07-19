@@ -8,24 +8,27 @@
 import Foundation
 
 struct EquipmentLosses: Codable {
-    var date: String?
+    
+    static let EquipmentLossesArray = ["Date", "Day", "Aircraft", "Helicopter", "Tank", "APC", "Field artillery", "MRL", "Military auto", "Fuel tank", "Drone", "Naval ship", "Anti-aircraft warfare", "Special equipment", "Mobile SRBM system", "Vehicles and fuel tanks", "Cruise missiles", "Greatest losses direction"]
+    
+    var date: String
     var day: Int
     var aircraft: Int
-    var helicopter: Int?
-    var tank: Int?
-    var APC: Int?
-    var fieldArtillery: Int?
-    var MRL: Int?
-    var militaryAuto: Int?
-    var fuelTank: Int?
-    var drone: Int?
-    var navalShip: Int?
-    var antiAircraftWarfare: Int?
-    var specialEquipment: Int?
-    var mobileSRBMSystem: Int?
-    var vehiclesAndFuelTanks: Int?
-    var cruiseMissiles: Int?
-    var greatestLossesDirection: String?
+    var helicopter: Int
+    var tank: Int
+    var APC: Int
+    var fieldArtillery: Int
+    var MRL: Int
+    var militaryAuto: Int
+    var fuelTank: Int
+    var drone: Int
+    var navalShip: Int
+    var antiAircraftWarfare: Int
+    var specialEquipment: Int
+    var mobileSRBMSystem: Int
+    var vehiclesAndFuelTanks: Int
+    var cruiseMissiles: Int
+    var greatestLossesDirection: String
     
     enum CodingKeys: String, CodingKey {
         case date = "date"
@@ -53,7 +56,7 @@ extension EquipmentLosses {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        date = try values.decodeIfPresent(String.self, forKey: .date)
+        date = try values.decodeIfPresent(String.self, forKey: .date) ?? ""
         
         if let theDay = try? values.decode(String.self, forKey: .day),
             let dayValue = Int(theDay) {
@@ -61,7 +64,7 @@ extension EquipmentLosses {
         } else {
             day = try values.decode(Int.self, forKey: .day)
         }
-        helicopter = try values.decodeIfPresent(Int.self, forKey: .helicopter)
+        helicopter = try values.decodeIfPresent(Int.self, forKey: .helicopter)  ?? 0
 
         if let theAircraft = try? values.decode(String.self, forKey: .aircraft),
             let aircraftValue = Int(theAircraft) {
@@ -69,21 +72,21 @@ extension EquipmentLosses {
         } else {
             aircraft = try values.decode(Int.self, forKey: .aircraft)
         }
-        tank = try values.decodeIfPresent(Int.self, forKey: .tank)
-        APC = try values.decodeIfPresent(Int.self, forKey: .APC)
-        fieldArtillery = try values.decodeIfPresent(Int.self, forKey: .fieldArtillery)
-        MRL = try values.decodeIfPresent(Int.self, forKey: .MRL)
-        militaryAuto = try values.decodeIfPresent(Int.self, forKey: .militaryAuto)
-        fuelTank = try values.decodeIfPresent(Int.self, forKey: .fuelTank)
-        drone = try values.decodeIfPresent(Int.self, forKey: .drone)
-        navalShip = try values.decodeIfPresent(Int.self, forKey: .navalShip)
+        tank = try values.decodeIfPresent(Int.self, forKey: .tank)  ?? 0
+        APC = try values.decodeIfPresent(Int.self, forKey: .APC)  ?? 0
+        fieldArtillery = try values.decodeIfPresent(Int.self, forKey: .fieldArtillery)  ?? 0
+        MRL = try values.decodeIfPresent(Int.self, forKey: .MRL)  ?? 0
+        militaryAuto = try values.decodeIfPresent(Int.self, forKey: .militaryAuto)  ?? 0
+        fuelTank = try values.decodeIfPresent(Int.self, forKey: .fuelTank)  ?? 0
+        drone = try values.decodeIfPresent(Int.self, forKey: .drone)  ?? 0
+        navalShip = try values.decodeIfPresent(Int.self, forKey: .navalShip)  ?? 0
 
-        antiAircraftWarfare = try values.decodeIfPresent(Int.self, forKey: .antiAircraftWarfare)
-        specialEquipment = try values.decodeIfPresent(Int.self, forKey: .specialEquipment)
-        mobileSRBMSystem = try values.decodeIfPresent(Int.self, forKey: .mobileSRBMSystem)
-        vehiclesAndFuelTanks = try values.decodeIfPresent(Int.self, forKey: .vehiclesAndFuelTanks)
-        cruiseMissiles = try values.decodeIfPresent(Int.self, forKey: .cruiseMissiles)
-        greatestLossesDirection = try values.decodeIfPresent(String.self, forKey: .greatestLossesDirection)
+        antiAircraftWarfare = try values.decodeIfPresent(Int.self, forKey: .antiAircraftWarfare)  ?? 0
+        specialEquipment = try values.decodeIfPresent(Int.self, forKey: .specialEquipment)  ?? 0
+        mobileSRBMSystem = try values.decodeIfPresent(Int.self, forKey: .mobileSRBMSystem)  ?? 0
+        vehiclesAndFuelTanks = try values.decodeIfPresent(Int.self, forKey: .vehiclesAndFuelTanks)  ?? 0
+        cruiseMissiles = try values.decodeIfPresent(Int.self, forKey: .cruiseMissiles)  ?? 0
+        greatestLossesDirection = try values.decodeIfPresent(String.self, forKey: .greatestLossesDirection)  ?? "No info"
         
     }
 }
