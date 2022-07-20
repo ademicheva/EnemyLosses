@@ -12,7 +12,7 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     let testArray = ["one", "two", "three", "four"]
 
     
-    var dayCount = 140 // number of day - 3 (140 - 138)
+    var dayCount = 140
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var okButton: UIButton!
@@ -36,6 +36,10 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.backgroundColor = .clear
         tableView.layer.cornerRadius = 10
         tableView.showsVerticalScrollIndicator = false
+        
+        okButton.layer.cornerRadius = 5
+        okButton.layer.borderWidth = 2
+        okButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.5)
 
         
         currentArrayEquipment = createValues(item: dataEquipment[dayCount - 2])
@@ -90,6 +94,7 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LossesTVCell
         cell.backgroundView = nil
+//        cell.isSelected = true
       //  cell.backgroundColor = .clear
         switch segmentedControl.selectedSegmentIndex {
         case 0:

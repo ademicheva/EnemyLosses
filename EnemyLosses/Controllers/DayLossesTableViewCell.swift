@@ -1,18 +1,15 @@
 //
-//  LossesTVCell.swift
+//  DayLossesTableViewCell.swift
 //  EnemyLosses
 //
-//  Created by Алина on 18.07.2022.
+//  Created by Алина on 20.07.2022.
 //
 
 import UIKit
 
-class LossesTVCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
-    
-    
+class DayLossesTableViewCell: UITableViewCell {
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +18,6 @@ class LossesTVCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
 
         // Configure the view for the selected state
     }

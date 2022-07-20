@@ -9,6 +9,7 @@ import Foundation
 
 struct EquipmentLosses: Codable {
 //    static let EquipmentLossesArray = ["Date",  "Aircraft", "Helicopter", "Tank", "APC", "Field artillery", "MRL", "Military auto", "Fuel tank", "Drone", "Naval ship", "Anti-aircraft warfare", "Special equipment", "Mobile SRBM system", "Vehicles and fuel tanks", "Cruise missiles", "Greatest losses direction"]
+    static let EquipmentDetail = ["Aircraft", "Helicopter", "Tank", "APC", "Field artillery", "MRL", "Military auto", "Fuel tank", "Drone", "Naval ship", "Anti-aircraft warfare", "Special equipment", "Mobile SRBM system", "Vehicles and fuel tanks", "Cruise missiles"]
     
     static let EquipmentLossesArray = ["Date", "Day", "Aircraft", "Helicopter", "Tank", "APC", "Field artillery", "MRL", "Military auto", "Fuel tank", "Drone", "Naval ship", "Anti-aircraft warfare", "Special equipment", "Mobile SRBM system", "Vehicles and fuel tanks", "Cruise missiles", "Greatest losses direction"]
     
