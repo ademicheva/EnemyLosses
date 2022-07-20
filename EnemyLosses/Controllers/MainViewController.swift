@@ -17,13 +17,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lossesByDayButton.layer.borderWidth = 6
-        lossesByDayButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 1)
+        lossesByDayButton.layer.borderWidth = 5
+        lossesByDayButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
         lossesByDayButton.layer.cornerRadius = 15
         
         
         detailedLosses.layer.borderWidth = 6
-        detailedLosses.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 1)
+        detailedLosses.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
         detailedLosses.layer.cornerRadius = 15
 
     }

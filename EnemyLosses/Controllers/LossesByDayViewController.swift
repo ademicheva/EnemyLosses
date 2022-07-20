@@ -37,8 +37,8 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.showsVerticalScrollIndicator = false
         
         okButton.layer.cornerRadius = 5
-        okButton.layer.borderWidth = 2
-        okButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.5)
+        okButton.layer.borderWidth = 5
+        okButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
 
         
         currentArrayEquipment = createValues(item: dataEquipment[dayCount - 2])

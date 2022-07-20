@@ -9,7 +9,6 @@ import Foundation
 
 struct PersonnelLosses: Codable {
     static let PersonnelLossesArray = ["Date", "Day", "Personnel", "Prisoner of War"]
-
     
     var date: String
     var day: Int
@@ -36,7 +35,6 @@ extension PersonnelLosses {
         } else {
             day = try values.decode(Int.self, forKey: .day)
         }
-
         personnel = try values.decodeIfPresent(Int.self, forKey: .personnel)  ?? 0
         pow = try values.decodeIfPresent(Int.self, forKey: .pow)  ?? 0
         

@@ -13,15 +13,18 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
     var items : [EquipmentDetail] = []
 //    let array = EquipmentDetail.tank.description
     var selectedEquipment: String = ""
-
+    @IBOutlet weak var label: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(selectedEquipment)
+        label.text = selectedEquipment
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
         
         tableView.reloadData()
     }
@@ -33,9 +36,14 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DayLossesTableViewCell
         cell.backgroundView = nil
+        cell.cellView.layer.cornerRadius = 10
 
+        cell.cellView.layer.borderWidth = 5
+        cell.cellView.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
+        cell.backgroundColor = nil
         cell.dateLabel.text = dataEquipment2[indexPath.row].date
         cell.quantityLabel.text = String(dataEquipment2[indexPath.row].aircraft)
+        
      //   cell.quantityLabel.text = String(dataEquipment2[indexPath.row].aircraft)
         
         switch selectedEquipment{

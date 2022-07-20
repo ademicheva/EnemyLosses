@@ -20,8 +20,6 @@
 		C78B9026288143510040F855 /* EquipmentLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9025288143510040F855 /* EquipmentLosses.swift */; };
 		C78B9028288143670040F855 /* PersonnelLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9027288143670040F855 /* PersonnelLosses.swift */; };
 		C78B902A2881437A0040F855 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B90292881437A0040F855 /* DataLoader.swift */; };
-		C78B902C2881455F0040F855 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B902B2881455F0040F855 /* MainCollectionViewController.swift */; };
-		C78B902E288145C00040F855 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B902D288145C00040F855 /* CollectionViewCell.swift */; };
 		C78B9031288146810040F855 /* Extension + MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */; };
 		C799BEC028880A0C00A9368B /* DayLossesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799BEBF28880A0C00A9368B /* DayLossesViewController.swift */; };
 		C799BEC228880B0500A9368B /* DayLossesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799BEC128880B0500A9368B /* DayLossesTableViewCell.swift */; };
@@ -48,8 +46,6 @@
 		C78B9025288143510040F855 /* EquipmentLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLosses.swift; sourceTree = "<group>"; };
 		C78B9027288143670040F855 /* PersonnelLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelLosses.swift; sourceTree = "<group>"; };
 		C78B90292881437A0040F855 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
-		C78B902B2881455F0040F855 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
-		C78B902D288145C00040F855 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + MainCollectionViewController.swift"; sourceTree = "<group>"; };
 		C799BEBF28880A0C00A9368B /* DayLossesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLossesViewController.swift; sourceTree = "<group>"; };
 		C799BEC128880B0500A9368B /* DayLossesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLossesTableViewCell.swift; sourceTree = "<group>"; };
@@ -90,8 +86,6 @@
 		C78B9006288141040040F855 /* EnemyLosses */ = {
 			isa = PBXGroup;
 			children = (
-				C78B902B2881455F0040F855 /* MainCollectionViewController.swift */,
-				C78B902D288145C00040F855 /* CollectionViewCell.swift */,
 				C78B902F2881465F0040F855 /* Extensions */,
 				C78B9024288143380040F855 /* Models */,
 				C78B901B288142A60040F855 /* Views */,
@@ -253,7 +247,6 @@
 				C799BEC028880A0C00A9368B /* DayLossesViewController.swift in Sources */,
 				C78B902A2881437A0040F855 /* DataLoader.swift in Sources */,
 				C78B9026288143510040F855 /* EquipmentLosses.swift in Sources */,
-				C78B902E288145C00040F855 /* CollectionViewCell.swift in Sources */,
 				C799BEC228880B0500A9368B /* DayLossesTableViewCell.swift in Sources */,
 				C76B966D2885A83900111F68 /* LossesTVCell.swift in Sources */,
 				C79BE0042886F8A100F7C001 /* SplashViewController.swift in Sources */,
@@ -263,7 +256,6 @@
 				C79BE00A2887294A00F7C001 /* EquipmentDetail.swift in Sources */,
 				C79BDFFE2886C95C00F7C001 /* DataLoaderPersonnel.swift in Sources */,
 				C78B900A288141040040F855 /* SceneDelegate.swift in Sources */,
-				C78B902C2881455F0040F855 /* MainCollectionViewController.swift in Sources */,
 				C76B966B2885A65100111F68 /* LossesByDayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
