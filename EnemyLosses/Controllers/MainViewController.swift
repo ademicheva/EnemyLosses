@@ -17,10 +17,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        totalLossesButton.layer.borderWidth = 6
-//        totalLossesButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 1)
-//        totalLossesButton.layer.cornerRadius = 15
-        
         lossesByDayButton.layer.borderWidth = 6
         lossesByDayButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 1)
         lossesByDayButton.layer.cornerRadius = 15
@@ -30,7 +26,6 @@ class MainViewController: UIViewController {
         detailedLosses.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 1)
         detailedLosses.layer.cornerRadius = 15
 
-        // Do any additional setup after loading the view.
     }
     
 

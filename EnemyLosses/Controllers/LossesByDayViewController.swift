@@ -12,13 +12,10 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     let testArray = ["one", "two", "three", "four"]
 
     
-    var dayCount = 140
-    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     
     
     let dataEquipment = DataLoader(lossesValue: LossesValue.equipment).equipmentLosses
@@ -27,9 +24,11 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     let arrayOfValuesPersonnel = PersonnelLosses.PersonnelLossesArray
     var currentArrayEquipment: [String] = []
     var currentArrayPersonnel: [String] = []
-    
+    var dayCount: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dayCount = dataEquipment.last?.day ?? 0
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -94,8 +93,7 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LossesTVCell
         cell.backgroundView = nil
-//        cell.isSelected = true
-      //  cell.backgroundColor = .clear
+
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             cell.nameLabel.text = arrayOfValuesEquipment[indexPath.row]
@@ -110,9 +108,6 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 40
-//    }
     
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
@@ -125,7 +120,12 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         let saveAction = UIAlertAction(title: "OK", style: .default) { action in
             let textField = ac.textFields?.first
             if let newTaskTitle = textField?.text {
-                if newTaskTitle == "" || Int(newTaskTitle)! >= 140  {
+                if newTaskTitle == "" {
+                    let ac2 = UIAlertController(title: "WARNING", message: "You haven't entered a day", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    ac2.addAction(ok)
+                    self.present(ac2, animated: true, completion: nil)
+                } else if Int(newTaskTitle)! > 140    {
                     let ac2 = UIAlertController(title: "WARNING", message: "There is no info on this day. Please, enter another day", preferredStyle: .alert)
                     let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     ac2.addAction(ok)
@@ -141,13 +141,13 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
         ac.addTextField { _ in }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
+
         ac.addAction(saveAction)
         ac.addAction(cancelAction)
         
-        
-        
+          
         present(ac, animated: true, completion: nil)
     }
     /*

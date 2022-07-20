@@ -33,7 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C75ED3612887E9D500B0303A /* equipment_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equipment_info.json; sourceTree = "<group>"; };
 		C76B9668288589CA00111F68 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C76B966A2885A65100111F68 /* LossesByDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesByDayViewController.swift; sourceTree = "<group>"; };
 		C76B966C2885A83900111F68 /* LossesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesTVCell.swift; sourceTree = "<group>"; };
@@ -150,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				C78B9020288143210040F855 /* russia_losses_equipment.json */,
-				C75ED3612887E9D500B0303A /* equipment_info.json */,
 				C78B90222881432A0040F855 /* russia_losses_personnel.json */,
 			);
 			path = "JSON Files";
