@@ -8,16 +8,14 @@
 import UIKit
 
 class LossesByDayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
-    
-    let testArray = ["one", "two", "three", "four"]
 
-    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var lastDay: Int = 0
+    var dayCount: Int = 0
     
     let dataEquipment = DataLoader(lossesValue: LossesValue.equipment).equipmentLosses
     let dataPersonnel = DataLoaderPersonnel().personnelLosses
@@ -25,12 +23,15 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     let arrayOfValuesPersonnel = PersonnelLosses.PersonnelLossesArray
     var currentArrayEquipment: [String] = []
     var currentArrayPersonnel: [String] = []
-    var dayCount: Int = 0
+    
+    weak var addOkButton: UIAlertAction?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dayCount = dataEquipment.last?.day ?? 0
         lastDay = dataEquipment.last?.day ?? 0
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
@@ -40,13 +41,11 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         okButton.layer.cornerRadius = 5
         okButton.layer.borderWidth = 5
         okButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
-
         
         currentArrayEquipment = createValues(item: dataEquipment[dayCount - 2])
         currentArrayPersonnel = createValuesPersonnel(item: dataPersonnel[dayCount - 2])
-        print("Data personnel count \(dataPersonnel.count)")
-        print("Data equipment count \(dataEquipment.count)")
         label.text = String(dayCount)
+        
         tableView.reloadData()
     }
     
@@ -110,12 +109,9 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     
-    
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         tableView.reloadData()
     }
-    
-    weak var addOkButton: UIAlertAction?
     
     @IBAction func okButtonPressed(_ sender: UIButton) {
         let ac = UIAlertController(title: "Enter a day", message: "", preferredStyle: .alert)
@@ -140,16 +136,8 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
             
             let textField = ac.textFields?.first
                 if let newTaskTitle = textField?.text {
-                    if newTaskTitle == "" {
-                        let ac2 = UIAlertController(title: "WARNING", message: "You haven't entered a day", preferredStyle: .alert)
-                        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                                ac2.addAction(ok)
-                        self.present(ac2, animated: true, completion: nil)
-                    } else if Int(newTaskTitle)! > self.lastDay  ||  Int(newTaskTitle)! < 2   {
-                        let ac2 = UIAlertController(title: "WARNING", message: "There is no info on this day. Please, enter another day", preferredStyle: .alert)
-                        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                        ac2.addAction(ok)
-                        self.present(ac2, animated: true, completion: nil)
+                    if Int(newTaskTitle)! > self.lastDay  ||  Int(newTaskTitle)! < 2   {
+                        Alert.showErrorValueAlert(on: self)
                     } else {
                         self.label.text = newTaskTitle
                         self.dayCount = Int(newTaskTitle)!
@@ -159,46 +147,11 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
                     }
                 }
         }
-        
         okAction.isEnabled = false
         addOkButton = okAction
         ac.addAction(cancelAction)
         ac.addAction(okAction)
         present(ac, animated: true, completion: nil)
-//        let ac = UIAlertController(title: "Enter the day", message: "", preferredStyle: .alert)
-//
-//        let saveAction = UIAlertAction(title: "OK", style: .default) { action in
-//            let textField = ac.textFields?.first
-//            if let newTaskTitle = textField?.text {
-//                if newTaskTitle == "" {
-//                    let ac2 = UIAlertController(title: "WARNING", message: "You haven't entered a day", preferredStyle: .alert)
-//                    let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                    ac2.addAction(ok)
-//                    self.present(ac2, animated: true, completion: nil)
-//                } else if Int(newTaskTitle)! > 140    {
-//                    let ac2 = UIAlertController(title: "WARNING", message: "There is no info on this day. Please, enter another day", preferredStyle: .alert)
-//                    let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                    ac2.addAction(ok)
-//                    self.present(ac2, animated: true, completion: nil)
-//                }
-//                else {
-//                    self.label.text = newTaskTitle
-//                    self.dayCount = Int(newTaskTitle)!
-//                    self.currentArrayEquipment = self.createValues(item: self.dataEquipment[self.dayCount - 2])
-//                    self.currentArrayPersonnel = self.createValuesPersonnel(item: self.dataPersonnel[self.dayCount - 2])
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
-//        ac.addTextField { _ in }
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
-//
-//        ac.addAction(saveAction)
-//        ac.addAction(cancelAction)
-//
-//
-//        present(ac, animated: true, completion: nil)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -11,7 +11,6 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
     let dataEquipment2 = DataLoader(lossesValue: LossesValue.equipment).equipmentLosses
     let dataPersonnel2 = DataLoaderPersonnel().personnelLosses
     var items : [EquipmentDetail] = []
-//    let array = EquipmentDetail.tank.description
     var selectedEquipment: String = ""
     @IBOutlet weak var label: UILabel!
     
@@ -43,8 +42,6 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
         cell.backgroundColor = nil
         cell.dateLabel.text = dataEquipment2[indexPath.row].date
         cell.quantityLabel.text = String(dataEquipment2[indexPath.row].aircraft)
-        
-     //   cell.quantityLabel.text = String(dataEquipment2[indexPath.row].aircraft)
         
         switch selectedEquipment{
             

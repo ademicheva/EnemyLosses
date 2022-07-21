@@ -28,6 +28,7 @@
 		C79BE00628871B9700F7C001 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79BE00528871B9700F7C001 /* DetailCollectionViewController.swift */; };
 		C79BE00828871C8700F7C001 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79BE00728871C8700F7C001 /* DetailCollectionViewCell.swift */; };
 		C79BE00A2887294A00F7C001 /* EquipmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79BE0092887294A00F7C001 /* EquipmentDetail.swift */; };
+		C7A526A428896A940094D5CD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A526A328896A940094D5CD /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		C79BE00528871B9700F7C001 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
 		C79BE00728871C8700F7C001 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		C79BE0092887294A00F7C001 /* EquipmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDetail.swift; sourceTree = "<group>"; };
+		C7A526A328896A940094D5CD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */,
 				C78B90292881437A0040F855 /* DataLoader.swift */,
 				C79BE0092887294A00F7C001 /* EquipmentDetail.swift */,
+				C7A526A328896A940094D5CD /* Alert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				C78B9028288143670040F855 /* PersonnelLosses.swift in Sources */,
 				C79BE00628871B9700F7C001 /* DetailCollectionViewController.swift in Sources */,
 				C78B9031288146810040F855 /* Extension + MainCollectionViewController.swift in Sources */,
+				C7A526A428896A940094D5CD /* Alert.swift in Sources */,
 				C799BEC028880A0C00A9368B /* DayLossesViewController.swift in Sources */,
 				C78B902A2881437A0040F855 /* DataLoader.swift in Sources */,
 				C78B9026288143510040F855 /* EquipmentLosses.swift in Sources */,

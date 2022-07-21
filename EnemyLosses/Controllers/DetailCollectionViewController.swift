@@ -18,19 +18,9 @@ class DetailCollectionViewController: UICollectionViewController {
 
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-//    dayLosses
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         if let destination = segue.destination as?
             DayLossesViewController, let index =
             collectionView.indexPathsForSelectedItems?.first {
@@ -57,8 +47,6 @@ class DetailCollectionViewController: UICollectionViewController {
         cell.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.5)
         cell.backgroundColor = .white
         cell.label.text = data[indexPath.row]
-
         return cell
     }
-
 }
