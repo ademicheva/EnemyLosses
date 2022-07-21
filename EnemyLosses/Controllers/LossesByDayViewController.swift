@@ -17,8 +17,9 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     var lastDay: Int = 0
     var dayCount: Int = 0
     
-    let dataEquipment = DataLoader(lossesValue: LossesValue.equipment).equipmentLosses
-    let dataPersonnel = DataLoaderPersonnel().personnelLosses
+    var dataEquipmentLosses: [EquipmentLosses] = []
+    var dataPersonnelLosses: [PersonnelLosses] = []
+    
     let arrayOfValuesEquipment = EquipmentLosses.EquipmentLossesArray
     let arrayOfValuesPersonnel = PersonnelLosses.PersonnelLossesArray
     var currentArrayEquipment: [String] = []
@@ -29,8 +30,8 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dayCount = dataEquipment.last?.day ?? 0
-        lastDay = dataEquipment.last?.day ?? 0
+        dayCount = dataEquipmentLosses.last?.day ?? 0
+        lastDay = dataEquipmentLosses.last?.day ?? 0
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,12 +39,12 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.layer.cornerRadius = 10
         tableView.showsVerticalScrollIndicator = false
         
-        okButton.layer.cornerRadius = 5
-        okButton.layer.borderWidth = 5
+        okButton.layer.cornerRadius = 7
+        okButton.layer.borderWidth = 1
         okButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
         
-        currentArrayEquipment = createValues(item: dataEquipment[dayCount - 2])
-        currentArrayPersonnel = createValuesPersonnel(item: dataPersonnel[dayCount - 2])
+        currentArrayEquipment = createValues(item: dataEquipmentLosses[dayCount - 2])
+        currentArrayPersonnel = createValuesPersonnel(item: dataPersonnelLosses[dayCount - 2])
         label.text = String(dayCount)
         
         tableView.reloadData()
@@ -141,8 +142,8 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
                     } else {
                         self.label.text = newTaskTitle
                         self.dayCount = Int(newTaskTitle)!
-                        self.currentArrayEquipment = self.createValues(item: self.dataEquipment[self.dayCount - 2])
-                        self.currentArrayPersonnel = self.createValuesPersonnel(item: self.dataPersonnel[self.dayCount - 2])
+                        self.currentArrayEquipment = self.createValues(item: self.dataEquipmentLosses[self.dayCount - 2])
+                        self.currentArrayPersonnel = self.createValuesPersonnel(item: self.dataPersonnelLosses[self.dayCount - 2])
                         self.tableView.reloadData()
                     }
                 }

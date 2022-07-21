@@ -8,6 +8,10 @@
 import Foundation
 
 struct PersonnelLosses: Codable {
+//    static let shared = PersonnelLosses()
+//
+//    private init() {}
+    
     static let PersonnelLossesArray = ["Date", "Day", "Personnel", "Prisoner of War"]
     
     var date: String

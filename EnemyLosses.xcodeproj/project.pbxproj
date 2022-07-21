@@ -110,10 +110,10 @@
 		C78B901C288142B80040F855 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C79BE0032886F8A100F7C001 /* SplashViewController.swift */,
 				C76B9668288589CA00111F68 /* MainViewController.swift */,
 				C76B966A2885A65100111F68 /* LossesByDayViewController.swift */,
 				C76B966C2885A83900111F68 /* LossesTVCell.swift */,
-				C79BE0032886F8A100F7C001 /* SplashViewController.swift */,
 				C79BE00528871B9700F7C001 /* DetailCollectionViewController.swift */,
 				C79BE00728871C8700F7C001 /* DetailCollectionViewCell.swift */,
 				C799BEBF28880A0C00A9368B /* DayLossesViewController.swift */,

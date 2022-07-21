@@ -7,20 +7,22 @@
 
 import UIKit
 
-class DayLossesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let dataEquipment2 = DataLoader(lossesValue: LossesValue.equipment).equipmentLosses
-    let dataPersonnel2 = DataLoaderPersonnel().personnelLosses
-    var items : [EquipmentDetail] = []
-    var selectedEquipment: String = ""
-    @IBOutlet weak var label: UILabel!
     
+    
+class DayLossesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var dataEquipmentLosses: [EquipmentLosses] = []
+    var dataPersonnelLosses: [PersonnelLosses] = []
+    
+    var selectedEquipment: String = ""
+    
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedEquipment)
+        
         label.text = selectedEquipment
-
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
@@ -29,7 +31,7 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataEquipment2.count - 2
+        return dataEquipmentLosses.count - 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,69 +42,47 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
         cell.cellView.layer.borderWidth = 5
         cell.cellView.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
         cell.backgroundColor = nil
-        cell.dateLabel.text = dataEquipment2[indexPath.row].date
-        cell.quantityLabel.text = String(dataEquipment2[indexPath.row].aircraft)
+        cell.dateLabel.text = dataEquipmentLosses[indexPath.row].date
+        cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].aircraft)
         
         switch selectedEquipment{
-            
         case "Personnel":
-            cell.quantityLabel.text = String(dataPersonnel2[indexPath.row].personnel)
+            cell.quantityLabel.text = String(dataPersonnelLosses[indexPath.row].personnel)
         case "Prisoners of War":
-            cell.quantityLabel.text = String(dataPersonnel2[indexPath.row].pow)
-            
+            cell.quantityLabel.text = String(dataPersonnelLosses[indexPath.row].pow)
         case "Aircraft":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].aircraft)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].aircraft)
         case "Helicopter":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].helicopter)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].helicopter)
         case "Tank":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].tank)
-            
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].tank)
         case "APC":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].APC)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].APC)
         case "Field artillery":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].fieldArtillery)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].fieldArtillery)
         case "MRL":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].MRL)
-        
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].MRL)
         case "Military auto":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].militaryAuto)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].militaryAuto)
         case "Fuel tank":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].fuelTank)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].fuelTank)
         case "Drone":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].drone)
-            
-
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].drone)
         case "Naval ship":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].navalShip)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].navalShip)
         case "Anti-aircraft warfare":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].antiAircraftWarfare)
-            
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].antiAircraftWarfare)
         case "Special equipment":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].specialEquipment)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].specialEquipment)
         case "Mobile SRBM system":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].mobileSRBMSystem)
-            
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].mobileSRBMSystem)
         case "Vehicles and fuel tanks":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].vehiclesAndFuelTanks)
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].vehiclesAndFuelTanks)
         case "Cruise missiles":
-            cell.quantityLabel.text = String(dataEquipment2[indexPath.row].cruiseMissiles)
-            
+            cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].cruiseMissiles)
         default:
             break
         }
-
-
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

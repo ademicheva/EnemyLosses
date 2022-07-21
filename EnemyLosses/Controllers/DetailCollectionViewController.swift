@@ -9,13 +9,14 @@ import UIKit
 
 
 class DetailCollectionViewController: UICollectionViewController {
+    var dataEquipmentLosses: [EquipmentLosses] = []
+    var dataPersonnelLosses: [PersonnelLosses] = []
 
     let data = EquipmentDetail.EquipmentDetail
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.showsVerticalScrollIndicator = false
-
     }
 
     // MARK: - Navigation
@@ -25,6 +26,8 @@ class DetailCollectionViewController: UICollectionViewController {
             DayLossesViewController, let index =
             collectionView.indexPathsForSelectedItems?.first {
             destination.selectedEquipment = data[index.row]
+            destination.dataPersonnelLosses = dataPersonnelLosses
+            destination.dataEquipmentLosses = dataEquipmentLosses
         }
     }
 
@@ -41,7 +44,6 @@ class DetailCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DetailCollectionViewCell
-
         cell.layer.cornerRadius = 15
         cell.layer.borderWidth = 5
         cell.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.5)
