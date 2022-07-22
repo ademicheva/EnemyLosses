@@ -20,7 +20,7 @@
 		C78B9026288143510040F855 /* EquipmentLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9025288143510040F855 /* EquipmentLosses.swift */; };
 		C78B9028288143670040F855 /* PersonnelLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9027288143670040F855 /* PersonnelLosses.swift */; };
 		C78B902A2881437A0040F855 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B90292881437A0040F855 /* DataLoader.swift */; };
-		C78B9031288146810040F855 /* Extension + MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */; };
+		C78B9031288146810040F855 /* Extension + DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B9030288146810040F855 /* Extension + DetailCollectionViewController.swift */; };
 		C799BEC028880A0C00A9368B /* DayLossesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799BEBF28880A0C00A9368B /* DayLossesViewController.swift */; };
 		C799BEC228880B0500A9368B /* DayLossesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799BEC128880B0500A9368B /* DayLossesTableViewCell.swift */; };
 		C79BDFFE2886C95C00F7C001 /* DataLoaderPersonnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */; };
@@ -47,7 +47,7 @@
 		C78B9025288143510040F855 /* EquipmentLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLosses.swift; sourceTree = "<group>"; };
 		C78B9027288143670040F855 /* PersonnelLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelLosses.swift; sourceTree = "<group>"; };
 		C78B90292881437A0040F855 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
-		C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + MainCollectionViewController.swift"; sourceTree = "<group>"; };
+		C78B9030288146810040F855 /* Extension + DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + DetailCollectionViewController.swift"; sourceTree = "<group>"; };
 		C799BEBF28880A0C00A9368B /* DayLossesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLossesViewController.swift; sourceTree = "<group>"; };
 		C799BEC128880B0500A9368B /* DayLossesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLossesTableViewCell.swift; sourceTree = "<group>"; };
 		C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderPersonnel.swift; sourceTree = "<group>"; };
@@ -110,14 +110,10 @@
 		C78B901C288142B80040F855 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C79BE0032886F8A100F7C001 /* SplashViewController.swift */,
-				C76B9668288589CA00111F68 /* MainViewController.swift */,
-				C76B966A2885A65100111F68 /* LossesByDayViewController.swift */,
-				C76B966C2885A83900111F68 /* LossesTVCell.swift */,
-				C79BE00528871B9700F7C001 /* DetailCollectionViewController.swift */,
-				C79BE00728871C8700F7C001 /* DetailCollectionViewCell.swift */,
-				C799BEBF28880A0C00A9368B /* DayLossesViewController.swift */,
-				C799BEC128880B0500A9368B /* DayLossesTableViewCell.swift */,
+				C7B66F44288AC256009398CA /* MainVC */,
+				C7B66F45288AC263009398CA /* LossesByDayVC */,
+				C7B66F46288AC276009398CA /* DetailCollectionVC */,
+				C7B66F47288AC287009398CA /* DailyLossesVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,12 +149,9 @@
 		C78B9024288143380040F855 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C78B9025288143510040F855 /* EquipmentLosses.swift */,
-				C78B9027288143670040F855 /* PersonnelLosses.swift */,
-				C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */,
-				C78B90292881437A0040F855 /* DataLoader.swift */,
-				C79BE0092887294A00F7C001 /* EquipmentDetail.swift */,
-				C7A526A328896A940094D5CD /* Alert.swift */,
+				C7B66F41288AC1F5009398CA /* Equipment */,
+				C7B66F42288AC20E009398CA /* Personnel */,
+				C7B66F43288AC227009398CA /* General */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,9 +159,72 @@
 		C78B902F2881465F0040F855 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C78B9030288146810040F855 /* Extension + MainCollectionViewController.swift */,
+				C78B9030288146810040F855 /* Extension + DetailCollectionViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C7B66F41288AC1F5009398CA /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				C78B9025288143510040F855 /* EquipmentLosses.swift */,
+				C78B90292881437A0040F855 /* DataLoader.swift */,
+				C79BE0092887294A00F7C001 /* EquipmentDetail.swift */,
+			);
+			path = Equipment;
+			sourceTree = "<group>";
+		};
+		C7B66F42288AC20E009398CA /* Personnel */ = {
+			isa = PBXGroup;
+			children = (
+				C78B9027288143670040F855 /* PersonnelLosses.swift */,
+				C79BDFFD2886C95C00F7C001 /* DataLoaderPersonnel.swift */,
+			);
+			path = Personnel;
+			sourceTree = "<group>";
+		};
+		C7B66F43288AC227009398CA /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C7A526A328896A940094D5CD /* Alert.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		C7B66F44288AC256009398CA /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				C79BE0032886F8A100F7C001 /* SplashViewController.swift */,
+				C76B9668288589CA00111F68 /* MainViewController.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		C7B66F45288AC263009398CA /* LossesByDayVC */ = {
+			isa = PBXGroup;
+			children = (
+				C76B966A2885A65100111F68 /* LossesByDayViewController.swift */,
+				C76B966C2885A83900111F68 /* LossesTVCell.swift */,
+			);
+			path = LossesByDayVC;
+			sourceTree = "<group>";
+		};
+		C7B66F46288AC276009398CA /* DetailCollectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				C79BE00528871B9700F7C001 /* DetailCollectionViewController.swift */,
+				C79BE00728871C8700F7C001 /* DetailCollectionViewCell.swift */,
+			);
+			path = DetailCollectionVC;
+			sourceTree = "<group>";
+		};
+		C7B66F47288AC287009398CA /* DailyLossesVC */ = {
+			isa = PBXGroup;
+			children = (
+				C799BEBF28880A0C00A9368B /* DayLossesViewController.swift */,
+				C799BEC128880B0500A9368B /* DayLossesTableViewCell.swift */,
+			);
+			path = DailyLossesVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +302,7 @@
 			files = (
 				C78B9028288143670040F855 /* PersonnelLosses.swift in Sources */,
 				C79BE00628871B9700F7C001 /* DetailCollectionViewController.swift in Sources */,
-				C78B9031288146810040F855 /* Extension + MainCollectionViewController.swift in Sources */,
+				C78B9031288146810040F855 /* Extension + DetailCollectionViewController.swift in Sources */,
 				C7A526A428896A940094D5CD /* Alert.swift in Sources */,
 				C799BEC028880A0C00A9368B /* DayLossesViewController.swift in Sources */,
 				C78B902A2881437A0040F855 /* DataLoader.swift in Sources */,
