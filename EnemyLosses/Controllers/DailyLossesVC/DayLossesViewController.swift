@@ -8,7 +8,6 @@
 import UIKit
     
 class DayLossesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     var dataEquipmentLosses: [EquipmentLosses] = []
     var dataPersonnelLosses: [PersonnelLosses] = []
     
@@ -43,7 +42,7 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
         cell.cellView.layer.borderWidth = 2
         cell.cellView.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
         cell.backgroundColor = nil
-        cell.dateLabel.text = dataEquipmentLosses[indexPath.row].date
+        cell.dateLabel.text = PersonnelLosses.changeDateFormat(date: dataEquipmentLosses[indexPath.row].date)
         cell.quantityLabel.text = String(dataEquipmentLosses[indexPath.row].aircraft)
         
         switch selectedEquipment{

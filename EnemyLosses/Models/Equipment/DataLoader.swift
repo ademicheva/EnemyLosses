@@ -7,11 +7,6 @@
 
 import Foundation
 
-//enum LossesValue: String {
-//    case equipment = "russia_losses_equipment"
-//    case personnel = "russia_losses_personnel"
-//}
-
 public class DataLoader {
     
     var equipmentLosses = [EquipmentLosses]()
@@ -22,10 +17,10 @@ public class DataLoader {
     
     func load() {
         
-        let path = Bundle.main.url(forResource: "russia_losses_equipment", withExtension: "json")!
+        guard let url =  URL(string: "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/main/data/russia_losses_equipment.json") else { return }
         
         do {
-            let urltoString = try String(contentsOf: path)
+            let urltoString = try String(contentsOf: url)
             let correctJSONString = urltoString.replacingOccurrences(of: "NaN", with: "null")
             guard let jsonData = correctJSONString.data(using: .utf8) else { return  }
             let jsonDecoder = JSONDecoder()

@@ -8,13 +8,12 @@
 import Foundation
 
 struct PersonnelLosses: Codable {
-//    static let shared = PersonnelLosses()
-//
-//    private init() {}
     
     static let PersonnelLossesArray = ["Date", "Day", "Personnel", "Prisoner of War"]
+
     
-    var date: String
+    var date:  String
+    
     var day: Int
     var personnel: Int
     var pow: Int
@@ -25,6 +24,15 @@ struct PersonnelLosses: Codable {
         case personnel = "personnel"
         case pow = "POW"
     }
+    
+    static func changeDateFormat(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let resultString = dateFormatter.string(from: date!)
+        return resultString
+    }
 }
 
 extension PersonnelLosses {
@@ -32,7 +40,7 @@ extension PersonnelLosses {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         date = try values.decodeIfPresent(String.self, forKey: .date) ?? ""
-        
+
         if let theDay = try? values.decode(String.self, forKey: .day),
             let dayValue = Int(theDay) {
             day = dayValue
@@ -41,7 +49,6 @@ extension PersonnelLosses {
         }
         personnel = try values.decodeIfPresent(Int.self, forKey: .personnel)  ?? 0
         pow = try values.decodeIfPresent(Int.self, forKey: .pow)  ?? 0
-        
     }
 }
 

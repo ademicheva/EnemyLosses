@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public class DataLoaderPersonnel {
     var personnelLosses = [PersonnelLosses]()
     
@@ -17,10 +16,10 @@ public class DataLoaderPersonnel {
     
     func load() {
         
-        let path = Bundle.main.url(forResource: "russia_losses_personnel", withExtension: "json")!
+        guard let url =  URL(string: "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/main/data/russia_losses_personnel.json") else { return }
         
         do {
-            let urltoString = try String(contentsOf: path)
+            let urltoString = try String(contentsOf: url)
             let correctJSONString = urltoString.replacingOccurrences(of: "NaN", with: "null")
             guard let jsonData = correctJSONString.data(using: .utf8) else { return  }
             let jsonDecoder = JSONDecoder()

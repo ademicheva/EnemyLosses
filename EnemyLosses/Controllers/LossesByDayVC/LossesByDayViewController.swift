@@ -19,6 +19,7 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     
     var dataEquipmentLosses: [EquipmentLosses] = []
     var dataPersonnelLosses: [PersonnelLosses] = []
+    var newdataPersonnelLosses: [PersonnelLosses] = []
     
     let arrayOfValuesEquipment = EquipmentLosses.EquipmentLossesArray
     let arrayOfValuesPersonnel = PersonnelLosses.PersonnelLossesArray
@@ -43,9 +44,10 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         okButton.layer.borderWidth = 1
         okButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
         
+        
         currentArrayEquipment = createValues(item: dataEquipmentLosses[dayCount - 2])
         currentArrayPersonnel = createValuesPersonnel(item: dataPersonnelLosses[dayCount - 2])
-        label.text = String(dayCount)
+        label.text = "Today is the \(lastDay) Day of War"
         
         tableView.reloadData()
     }
@@ -56,8 +58,12 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func createValues(item: EquipmentLosses) -> [String] {
+        var itemCopy = dataEquipmentLosses.last!
+        itemCopy = item
+        itemCopy.date = PersonnelLosses.changeDateFormat(date: itemCopy.date)
+        
         var equipmentArray: [String] = []
-        let mirror = Mirror(reflecting: item)
+        let mirror = Mirror(reflecting: itemCopy)
         
         for i in mirror.children {
             equipmentArray.append(toString(i.value))
@@ -66,8 +72,12 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func createValuesPersonnel(item: PersonnelLosses) -> [String] {
+        var itemCopy = dataPersonnelLosses.last!
+        itemCopy = item
+        itemCopy.date = PersonnelLosses.changeDateFormat(date: itemCopy.date)
+        
         var equipmentArray: [String] = []
-        let mirror = Mirror(reflecting: item)
+        let mirror = Mirror(reflecting: itemCopy)
         
         for i in mirror.children {
             equipmentArray.append(toString(i.value))
@@ -93,7 +103,10 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LossesTVCell
+        
         cell.backgroundView = nil
+        
+        
 
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -140,7 +153,6 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
                     if Int(newTaskTitle)! > self.lastDay  ||  Int(newTaskTitle)! < 2   {
                         Alert.showErrorValueAlert(on: self)
                     } else {
-                        self.label.text = newTaskTitle
                         self.dayCount = Int(newTaskTitle)!
                         self.currentArrayEquipment = self.createValues(item: self.dataEquipmentLosses[self.dayCount - 2])
                         self.currentArrayPersonnel = self.createValuesPersonnel(item: self.dataPersonnelLosses[self.dayCount - 2])
@@ -166,15 +178,4 @@ class LossesByDayViewController: UIViewController, UITableViewDataSource, UITabl
         let textField = notification.object as! UITextField
         addOkButton!.isEnabled = textField.text!.utf16.count >= 1
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

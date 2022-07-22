@@ -22,6 +22,5 @@ class DayLossesTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
     }
 }

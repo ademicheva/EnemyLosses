@@ -8,10 +8,7 @@
 import Foundation
 
 struct EquipmentLosses: Codable {
-//    static let shared = EquipmentLosses()
-//
-//    private init() {}
-
+    
     static let EquipmentDetail = ["Personnel", "Prisoners of War", "Aircraft", "Helicopter", "Tank", "APC", "Field artillery", "MRL", "Military auto", "Fuel tank", "Drone", "Naval ship", "Anti-aircraft warfare", "Special equipment", "Mobile SRBM system", "Vehicles and fuel tanks", "Cruise missiles"]
     
     static let EquipmentLossesArray = ["Date", "Day", "Aircraft", "Helicopter", "Tank", "APC", "Field artillery", "MRL", "Military auto", "Fuel tank", "Drone", "Naval ship", "Anti-aircraft warfare", "Special equipment", "Mobile SRBM system", "Vehicles and fuel tanks", "Cruise missiles", "Greatest losses direction"]
@@ -55,6 +52,14 @@ struct EquipmentLosses: Codable {
         case cruiseMissiles = "cruise missiles"
         case greatestLossesDirection = "greatest losses direction"
     }
+      func changeDateFormat(dateInt: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let resultString = dateFormatter.string(from: date!)
+        return resultString
+    }
 }
 
 extension EquipmentLosses {
@@ -62,7 +67,6 @@ extension EquipmentLosses {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         date = try values.decodeIfPresent(String.self, forKey: .date) ?? ""
-        
         if let theDay = try? values.decode(String.self, forKey: .day),
             let dayValue = Int(theDay) {
             day = dayValue
