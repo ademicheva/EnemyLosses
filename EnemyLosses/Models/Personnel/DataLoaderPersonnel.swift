@@ -7,10 +7,6 @@
 
 import Foundation
 
-//enum LossesValue: String {
-//    case equipment = "russia_losses_equipment"
-//    case personnel = "russia_losses_personnel"
-//}
 
 public class DataLoaderPersonnel {
     var personnelLosses = [PersonnelLosses]()

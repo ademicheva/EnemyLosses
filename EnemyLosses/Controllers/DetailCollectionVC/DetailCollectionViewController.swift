@@ -12,7 +12,7 @@ class DetailCollectionViewController: UICollectionViewController {
     var dataEquipmentLosses: [EquipmentLosses] = []
     var dataPersonnelLosses: [PersonnelLosses] = []
 
-    let data = EquipmentDetail.EquipmentDetail
+    let data = EquipmentLosses.EquipmentDetail
 
     override func viewDidLoad() {
         super.viewDidLoad()

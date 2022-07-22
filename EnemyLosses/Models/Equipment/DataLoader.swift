@@ -13,8 +13,8 @@ import Foundation
 //}
 
 public class DataLoader {
+    
     var equipmentLosses = [EquipmentLosses]()
-    var personnelLosses = [PersonnelLosses]()
     
     init() {
         load()
@@ -30,9 +30,7 @@ public class DataLoader {
             guard let jsonData = correctJSONString.data(using: .utf8) else { return  }
             let jsonDecoder = JSONDecoder()
             let dataFromJSON = try jsonDecoder.decode([EquipmentLosses].self, from: jsonData)
-            let dataPersonnelFromJSON = try jsonDecoder.decode([PersonnelLosses].self, from: jsonData)
             self.equipmentLosses = dataFromJSON
-            self.personnelLosses = dataPersonnelFromJSON
         } catch {
             print(error)
         }
