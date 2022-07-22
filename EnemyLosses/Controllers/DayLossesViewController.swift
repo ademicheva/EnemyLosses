@@ -26,6 +26,8 @@ class DayLossesViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
+        tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
         
         tableView.reloadData()
     }

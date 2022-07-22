@@ -7,22 +7,22 @@
 
 import Foundation
 
-enum LossesValue: String {
-    case equipment = "russia_losses_equipment"
-    case personnel = "russia_losses_personnel"
-}
+//enum LossesValue: String {
+//    case equipment = "russia_losses_equipment"
+//    case personnel = "russia_losses_personnel"
+//}
 
 public class DataLoader {
     var equipmentLosses = [EquipmentLosses]()
     var personnelLosses = [PersonnelLosses]()
     
-    init(lossesValue: LossesValue) {
-        load(lossesValue: lossesValue)
+    init() {
+        load()
     }
     
-    func load(lossesValue: LossesValue) {
+    func load() {
         
-        let path = Bundle.main.url(forResource: lossesValue.rawValue, withExtension: "json")!
+        let path = Bundle.main.url(forResource: "russia_losses_equipment", withExtension: "json")!
         
         do {
             let urltoString = try String(contentsOf: path)

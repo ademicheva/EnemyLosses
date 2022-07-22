@@ -14,14 +14,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lossesByDayButton: UIButton!
     @IBOutlet weak var detailedLosses: UIButton!
     
-    let dataEquipment1 = DataLoader(lossesValue: LossesValue.equipment).equipmentLosses
-    let dataPersonnel1 = DataLoaderPersonnel().personnelLosses
+    let dataEquipment = DataLoader().equipmentLosses
+    let dataPersonnel = DataLoaderPersonnel().personnelLosses
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataEquipmentLosses = dataEquipment1
-        dataPersonnelLosses = dataPersonnel1
+        dataEquipmentLosses = dataEquipment
+        dataPersonnelLosses = dataPersonnel
      
         lossesByDayButton.layer.borderWidth = 5
         lossesByDayButton.layer.borderColor = CGColor(red: 64.0/255.0, green: 64.0/255.0, blue: 64.0/255.0, alpha: 0.6)
@@ -32,18 +32,19 @@ class MainViewController: UIViewController {
         detailedLosses.layer.cornerRadius = 15
 
     }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?
             LossesByDayViewController {
-            destination.dataEquipmentLosses = dataEquipment1
-            destination.dataPersonnelLosses = dataPersonnel1
+            destination.dataEquipmentLosses = dataEquipment
+            destination.dataPersonnelLosses = dataPersonnel
         }
         if let destination = segue.destination as?
             DetailCollectionViewController {
-            destination.dataEquipmentLosses = dataEquipment1
-            destination.dataPersonnelLosses = dataPersonnel1
+            destination.dataEquipmentLosses = dataEquipment
+            destination.dataPersonnelLosses = dataPersonnel
         }
     }
 }
